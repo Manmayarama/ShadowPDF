@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+
+  "name": "ShadowPDF",
+  "description": "Adds a simple dark mode functionality for PDF files in Google Chrome and Microsoft Edge",
+  "version": "1.0",
+
+  "icons": {
+    "128": "/icons/document.png"
+  },
+
+  "action": {
+    "default_icon": "/icons/document.png",
+    "default_popup": "/popup.html"
+  },
+
+  "background": {
+    "service_worker": "/scripts/background.js"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "commands": {
+    "run-dark-mode": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Apply dark mode to the current page"
+    },
+    "_execute_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y",
+        "chromeos": "Ctrl+Shift+U",
+        "linux": "Ctrl+Shift+J"
+      }
+    }
+  }
+}
